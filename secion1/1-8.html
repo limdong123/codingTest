@@ -15,17 +15,30 @@
 // 오.
                 let answer;
                 let sum = 0;
+                let a,b
+//두개를 뽑아서 가짜인지 확인해보기
+//sum 구하기 -> 이중for문으로 램덤 2개 구하기 -> sum-arr[i]-arr[j]가 100이면 i,j가 가짜 난쟁이므로
+//filter로 arr[i],arr[j]아닌 것들만 꺼내기
 
-                for(let i = 0; i < arr.length; i++){
-                    sum += arr[i]
-                }
-                if(100 < sum){
-                    sum = sum - 100
-                }
-                for(let i = 0; i< arr.length;i++){
-                    
-                }
+                sum=arr.reduce((a, b)=>{
+                    return a+b
+                })
 
+                for(let i =0; i<arr.length; i++){
+                    for(let j=0; j<arr.length; j++){
+                        if(sum - (arr[i]+arr[j]) === 100){
+                            answer = arr.filter((v)=>{
+                                return (v !== arr[i] && v !== arr[j])
+                            })
+                            a = arr[i]
+                            b = arr[j]
+                            //arr.splice(j, 1)
+                            //arr.splice(i, 1)
+                        }
+                    }
+                }
+                console.log(a, b)
+                console.log(answer)
 
                 return answer;
             }

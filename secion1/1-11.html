@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){ 
+// 한 개의 문자열을 입력받아 해당 문자열에 알파벳 대문자가 몇 개 있는지 
+// 알아내는 프로그램을 작성하세요.        
+                let answer=0;
+                //s[i].charCodeAt(0) = s[i]의 문자 0번째를 아스키코드로 변경
+                for(let i = 0; i<s.length; i++){
+                    if(s[i].charCodeAt(0) >= 65 && s[i].charCodeAt(0) <= 90){
+                        console.log(s[i])
+                        answer += 1
+                    }
+                }
+                //다른풀이
+                //x.toUpperCase() => 대문자로 변경
+                //x.toUpperCase()가 x와 같으면 대문자다
+                // let answer=0
+                // for(let x of s){
+                //     if(x===x.toUpperCase()){
+                //         answer++
+                //     }
+                // }
+
+                return answer;
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+// 한 개의 문자열을 입력받고, 특정 문자를 입력받아 해당 특정문자가 입력받은 문자열에 몇 개
+// 존재하는지 알아내는 프로그램을 작성하세요.
+// 문자열의 길이는 100을 넘지 않습니다.
+                let answer=0;
+                //for of => i(각 반복에 서로 다른 속성값인 variable),
+                //s(반복되는 열거가능한 속성이 있는 객체, iterable)
+                for(let i of s){
+                    if(i === t){
+                        answer += 1
+                    }
+                }
+                return answer;
+
+                //다른 풀이
+                // let answer = s.split(t).length
+                // //'t'가 구분자가 되서 짜르는 문자열 생성
+                // //['COMPUTE' , 'P' , 'OG' , 'AMMING']생김 3개 있으니 4개 문자열 생김
+                // return answer-1
+
+            }
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>
+

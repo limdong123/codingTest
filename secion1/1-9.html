@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+            //대문자로 이루어진 영어단어가 입력되면 단어에 포함된 ‘A'를 모두 ’#‘으로 바꾸어 출력하는
+            //프로그램을 작성하세요.
+                let answer="";
+
+                let s_split = s.split("")
+                for(let i = 0; i<s_split.length; i++){
+                    if(s_split[i] === "A"){
+                        s_split[i] = "#"
+                    }
+                }
+                answer = s_split.join("")
+                return answer
+                //정답1
+                // let answer=""
+                // for(let x of s){
+                //     if(x === "A"){
+                //         answer+="#"
+                //     } else {
+                //         answer+=x
+                //     }
+                // }
+
+                //정답2
+                // let answer = s.replace(/A/g, '#')
+                // return answer
+            }
+            str = "BANANA"
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
