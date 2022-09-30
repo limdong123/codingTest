@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //forEach, map, filter, reduce
+            //
+            arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            //forEach()메서드는 주어진 함수를 배열 요소 각각에 대해 실행합니다.
+            // arr.forEach((v, i)=>{ //v = arr의 인자, i = v의 번호, this = thisis뒤에 반복
+            //     console.log(v,i, this)
+            // }, [1, 2]); 
+
+            //map = 새로운 배열 생성, 원본배열을 이용해서 새로운 배열 생성 -> 기존 배열과 길이 같음
+            // let answer = arr.map((v, i) =>{
+            //     return v*v
+            // })
+            // console.log(answer)
+
+            //filter => 원본배열의 요소중 함수의 참에 속하는 것들로 새로운 배열 생성
+            // answer=arr.filter((v, i)=>{
+            //     return v%2===0
+            // })
+            // console.log(answer)
+            
+            //reduce => 원본배열을 순환하면서 콜백함수를 수행해서 특정 값만 출력
+            answer=arr.reduce((acc, value) => {
+                return acc+value
+            }, 0)   //0은 초기화값
+            console.log(answer)
+
+            
+        </script>
+    </body>
+</html>
