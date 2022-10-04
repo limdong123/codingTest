@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){  
+//                 등수구하기
+// N(1<=N<=100)명의 학생의 국어점수가 입력되면 각 학생의 등수를 입력된 순서대로 출력하는
+// 프로그램을 작성하세요.
+//이걸 정렬을하고 이 숫자를 가진 indexOf 그 정렬된 등수를 입력
+                let answer = []
+                let arr_sort = arr.sort((a,b)=>{
+                    return b-a
+                })
+                console.log("arr_sort: ", arr_sort)
+
+
+                for(let i = 0; i<arr.length; i++){
+                    //answer.push(arr_sort.indexOf(arr[i]))
+                    answer.push(arr.indexOf(arr[i]))
+                }
+
+                return answer;
+            }
+
+            let arr=[87, 89, 92, 100, 76];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
