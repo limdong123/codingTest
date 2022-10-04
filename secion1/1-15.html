@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+// 소문자로 된 단어(문자열)가 입력되면 그 단어의 가운데 문자를 출력하는 프로그램을 작성하세
+// 요. 단 단어의 길이가 짝수일 경우 가운데 2개의 문자를 출력합니다.
+                let answer;
+
+                if(s.length%2 === 1){
+                    answer = s[parseInt(s.length/2)]
+                } else {
+                    answer = s.slice((s.length/2) -1 , (s.length/2) + 1)
+                }
+                
+                //다른풀이 
+                //Math.floor => 소수점내림
+                //subString(start, end) => string 객체의 start 인덱스부터 end 인덱스 전까지 문자열의 부분 문자열 반환
+                // let answer;
+                // let mid=Math.floor(s.length/2)
+                // if(s.length%2===1) answer=s.substring(mid, mid+1);
+                // else answer=s.substring(mid-1, mid+1);
+                // return answer;
+
+                return answer;
+            }
+            console.log(solution("stuudy"));
+        </script>
+    </body>
+</html>

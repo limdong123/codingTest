@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+// N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하는 프로그램을 작성하세요.
+// 출력하는 문자열은 원래의 입력순서를 유지합니다.  
+                let answer = [];
+                let sameKeyWord;
+                //filter(v,i)=> v(밸류), i(밸류의 인덱스번호)
+
+                while(s.length > 0){
+                    answer.push(s[0])
+                    s = s.filter((value)=>{
+                        return value !== s[0]
+                    })
+                }
+                //다른풀이1
+                // for(let i = 0; i < s.length; i++){
+                //     if(s.indexOf(s[i]) === i){
+                //         answer.push(s[i])
+                //     }
+                // }
+                //다른풀이2
+                // answer=s.filter(function(v, i){
+                //     return s.indexOf(v)===i;
+                // });
+
+                return answer;
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
