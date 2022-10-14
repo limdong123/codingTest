@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+//                 뒤집은 소수
+// N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 수가 소수이면 그 소수를 출력하
+// 는 프로그램을 작성하세요. 예를 들어 32를 뒤집으면 23이고, 23은 소수이다. 그러면 23을 출
+// 력한다. 단 910를 뒤집으면 19로 숫자화 해야 한다. 첫 자리부터의 연속된 0은 무시한다.
+
+                let answer=[];
+                let trun = []
+                //숫자 뒤집기
+                for(let i = 0; i<arr.length; i++){
+                    answer.push(Number(String(arr[i]).split("").reverse().join("")))
+                    trun.push(Number(String(arr[i]).split("").reverse().join("")))
+                    console.log(answer)
+                }
+                
+                //소수만 남기기
+                for(let i = 0; i<trun.length; i++){
+                    let temp = trun[i]
+                    console.log(temp)
+                    //parseInt(Math.sqrt(temp) => 숫자의 제곱근까지만 확인해보면 됨.
+                    //전 코드 : j<temp
+                    for(let j = 2; j <= parseInt(Math.sqrt(temp)); j++){
+                        console.log(temp, j ,temp%j)
+                        if(temp%j === 0 ){
+                            answer = answer.filter((v)=> {
+                                return v !== temp 
+                            })
+                            break
+                        }
+                    }
+                }
+                answer = answer.filter((v)=> {
+                return v !== 1 
+                })
+                return answer;
+            }
+            
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
+
+
+<!-- <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function isPrime(num){
+                if(num===1) return false;
+                for(let i=2; i<=parseInt(Math.sqrt(num)); i++){
+                    if(num%i===0) return false;
+                }
+                return true;
+            }
+            function solution(arr){
+                let answer=[];
+                for(let x of arr){
+                    let res=0;
+                    while(x){
+                        let t=x%10;
+                        res=res*10+t;
+                        x=parseInt(x/10);
+                    }
+                    if(isPrime(res)) answer.push(res);
+                }
+                return answer;
+            }
+            
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
+
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function isPrime(num){
+                if(num===1) return false;
+                for(let i=2; i<=parseInt(Math.sqrt(num)); i++){
+                    if(num%i===0) return false;
+                }
+                return true;
+            }
+            function solution(arr){
+                let answer=[];
+                for(let x of arr){
+                    let res=Number(x.toString().split('').reverse().join(''));
+                    if(isPrime(res)) answer.push(res);
+                }
+                return answer;
+            }
+            
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html> -->
